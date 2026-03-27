@@ -89,34 +89,54 @@ nav a.active::after {
   background: #0096c7;
 }
 
-/* ===== FEATURES ===== */
-.features {
-  display: flex;
-  justify-content: center;
+/* ===== FEATURES / SERVICE CARDS ===== */
+.features, .services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
-  padding: 60px;
-  flex-wrap: wrap;
+  padding: 40px 20px;
+  justify-items: center;
 }
 
-.card {
+/* ENTIRE CARD CLICKABLE */
+.service-card, .card, .plan {
+  display: block;
   background: white;
+  width: 260px;
   padding: 25px;
   border-radius: 12px;
-  width: 250px;
   text-align: center;
-  font-weight: 500;
+  text-decoration: none;
+  color: #1b263b;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+.service-card .icon, .card .icon {
+  font-size: 32px;
+}
+
+.service-card h3, .card h3, .plan h3 {
+  margin: 10px 0;
+}
+
+.service-card p, .card p, .plan p {
+  font-size: 14px;
+  color: #555;
+}
+
+.service-card:hover, .card:hover, .plan:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
 /* ===== PAGE SECTIONS ===== */
 .page {
-  padding: 60px;
+  padding: 60px 20px;
   text-align: center;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .page h2 {
@@ -124,7 +144,7 @@ nav a.active::after {
   font-size: 30px;
 }
 
-/* ===== SERVICES LIST ===== */
+/* ===== SERVICES LIST (OLD STYLE) ===== */
 .page ul {
   list-style: none;
 }
@@ -140,18 +160,17 @@ nav a.active::after {
 
 /* ===== PRICING ===== */
 .pricing {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
-  flex-wrap: wrap;
   margin-top: 30px;
+  padding: 0 20px;
 }
 
 .plan {
   background: white;
   padding: 30px;
   border-radius: 12px;
-  width: 250px;
   text-align: center;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -161,16 +180,12 @@ nav a.active::after {
   transform: scale(1.05);
 }
 
-.plan h3 {
-  margin-bottom: 10px;
-}
-
 /* ===== CONTACT PAGE ===== */
 .contact-container {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
-  padding: 60px;
+  padding: 60px 20px;
   justify-content: center;
 }
 
@@ -258,49 +273,7 @@ nav a.active::after {
   background: #1ebe5d;
 }
 
-/* ===== SERVICES GRID & CARDS ===== */
-.services-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 30px;
-}
-
-/* ENTIRE CARD CLICKABLE */
-.service-card {
-  display: block;
-  background: white;
-  width: 260px;
-  padding: 25px;
-  border-radius: 12px;
-  text-align: center;
-  text-decoration: none;
-  color: #1b263b;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.service-card .icon {
-  font-size: 32px;
-}
-
-.service-card h3 {
-  margin: 10px 0;
-}
-
-.service-card p {
-  font-size: 14px;
-  color: #555;
-}
-
-.service-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-}
-
-/* Pulse animation (premium feel) */
+/* Pulse animation for floating button */
 @keyframes pulse {
   0% {
     box-shadow: 0 0 0 0 rgba(37,211,102, 0.6);
@@ -338,9 +311,10 @@ footer {
   }
 
   .features,
-  .services-grid {
-    flex-direction: column;
-    align-items: center;
+  .services-grid,
+  .pricing {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .contact-container {
