@@ -257,7 +257,47 @@ nav a.active::after {
   transform: scale(1.1);
   background: #1ebe5d;
 }
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+}
 
+/* ENTIRE CARD CLICKABLE */
+.service-card {
+  display: block; /* IMPORTANT */
+  background: white;
+  width: 260px;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  color: #1b263b;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.service-card .icon {
+  font-size: 32px;
+}
+
+.service-card h3 {
+  margin: 10px 0;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* HOVER EFFECT */
+.service-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
 /* Pulse animation (premium feel) */
 @keyframes pulse {
   0% {
