@@ -8,8 +8,17 @@
 body {
   font-family: 'Poppins', sans-serif;
   background: #f4f6fb;
-  color: #000; /* main text black */
+  color: #000; /* Black text */
   line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* ===== HEADER ===== */
@@ -17,23 +26,33 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 60px;
-  background: #ffffff; /* light header for black links */
-  color: #000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 3% 5%;
+  background: #0d1b2a;
+  color: white;
+  flex-wrap: wrap;
 }
 
 .logo {
-  font-size: 22px;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
 nav a {
-  color: #000; /* black nav links */
-  margin-left: 20px;
-  text-decoration: none;
-  position: relative;
+  color: #000;
   font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: #00b4d8;
 }
 
 nav a::after {
@@ -55,34 +74,33 @@ nav a.active::after {
 /* ===== HERO SECTION ===== */
 .hero {
   height: 90vh;
-  background: linear-gradient(rgba(13,27,42,0.7), rgba(13,27,42,0.7)),
+  background: linear-gradient(rgba(13,27,42,0.6), rgba(13,27,42,0.6)),
               url('https://images.unsplash.com/photo-1519389950473-47ba0277781c') no-repeat center center;
   background-size: cover;
-  color: #fff;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 0 2%;
 }
 
 .hero h2 {
-  font-size: 42px;
+  font-size: 3rem;
   margin-bottom: 15px;
 }
 
 .hero p {
-  font-size: 18px;
+  font-size: 1.2rem;
   margin-bottom: 25px;
 }
 
-/* BUTTON */
 .btn {
   background: #00b4d8;
   color: white;
   padding: 12px 25px;
   border-radius: 8px;
-  text-decoration: none;
   transition: all 0.3s ease;
 }
 
@@ -90,60 +108,69 @@ nav a.active::after {
   background: #0096c7;
 }
 
-/* ===== FEATURES / SERVICES GRID ===== */
-.features, .services-grid {
+/* ===== SERVICES / FEATURES GRID ===== */
+.features,
+.services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
-  padding: 40px 20px;
+  padding: 40px 5%;
   justify-items: center;
 }
 
-/* ENTIRE CARD CLICKABLE */
-.service-card, .card, .plan {
+.service-card,
+.card,
+.plan {
   display: block;
   background: white;
-  width: 260px;
+  width: 100%;
+  max-width: 260px;
   padding: 25px;
   border-radius: 12px;
   text-align: center;
   text-decoration: none;
-  color: #000; /* black card text */
+  color: #000;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
-.service-card .icon, .card .icon {
-  font-size: 32px;
+.service-card .icon,
+.card .icon {
+  font-size: 2rem;
 }
 
-.service-card h3, .card h3, .plan h3 {
+.service-card h3,
+.card h3,
+.plan h3 {
   margin: 10px 0;
 }
 
-.service-card p, .card p, .plan p {
-  font-size: 14px;
+.service-card p,
+.card p,
+.plan p {
+  font-size: 0.9rem;
   color: #555;
 }
 
-.service-card:hover, .card:hover, .plan:hover {
+.service-card:hover,
+.card:hover,
+.plan:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
 /* ===== PAGE SECTIONS ===== */
 .page {
-  padding: 60px 20px;
-  text-align: center;
-  max-width: 1100px;
+  padding: 5% 5%;
+  max-width: 1200px;
   margin: auto;
+  text-align: center;
 }
 
 .page h2 {
   margin-bottom: 20px;
-  font-size: 30px;
-  color: #000;
+  font-size: 2rem;
 }
 
 /* ===== PRICING ===== */
@@ -152,20 +179,7 @@ nav a.active::after {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
   margin-top: 30px;
-  padding: 0 20px;
-}
-
-.plan {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.plan:hover {
-  transform: scale(1.05);
+  padding: 0 5%;
 }
 
 /* ===== CONTACT PAGE ===== */
@@ -173,16 +187,17 @@ nav a.active::after {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
-  padding: 60px 20px;
+  padding: 5% 5%;
   justify-content: center;
 }
 
-.contact-info, 
+.contact-info,
 .contact-form {
   background: white;
   padding: 30px;
   border-radius: 12px;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
@@ -198,11 +213,11 @@ nav a.active::after {
 }
 
 .info-box span {
-  font-size: 20px;
+  font-size: 1.2rem;
   margin-right: 10px;
 }
 
-/* ===== FORM ===== */
+/* FORM */
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -210,7 +225,6 @@ nav a.active::after {
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  font-family: 'Poppins', sans-serif;
 }
 
 .contact-form textarea {
@@ -232,7 +246,7 @@ nav a.active::after {
   background: #0096c7;
 }
 
-/* ===== WHATSAPP FLOAT BUTTON ===== */
+/* ===== WHATSAPP FLOATING BUTTON ===== */
 .whatsapp-float {
   position: fixed;
   bottom: 25px;
@@ -261,11 +275,10 @@ nav a.active::after {
   background: #1ebe5d;
 }
 
-/* Pulse animation */
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
-  70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
-  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+  0% { box-shadow: 0 0 0 0 rgba(37,211,102, 0.6); }
+  70% { box-shadow: 0 0 0 15px rgba(37,211,102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102, 0); }
 }
 
 /* ===== FOOTER ===== */
@@ -278,6 +291,12 @@ footer {
 }
 
 /* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
@@ -289,7 +308,7 @@ footer {
   }
 
   .hero h2 {
-    font-size: 28px;
+    font-size: 2rem;
   }
 
   .features,
@@ -301,6 +320,6 @@ footer {
 
   .contact-container {
     flex-direction: column;
-    padding: 30px;
+    padding: 30px 5%;
   }
 }
