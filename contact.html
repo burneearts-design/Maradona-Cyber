@@ -2,40 +2,78 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | Maradona Cyber</title>
 <link rel="stylesheet" href="style.css">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<header>
-  <h1>Maradona Cyber</h1>
+<header class="header">
+  <h1 class="logo">Maradona Cyber</h1>
   <nav>
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
     <a href="pricing.html">Pricing</a>
-    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="active">Contact</a>
   </nav>
 </header>
 
-<section class="page">
-  <h2>Contact Us</h2>
+<section class="contact-container">
 
-  <p>📍 Litein Town</p>
-  <p>📞 <a href="tel:0707282427">0707 282 427</a></p>
-  <p>📧 <a href="mailto:maradonacyber@gmail.com">maradonacyber@gmail.com</a></p>
+  <div class="contact-info">
+    <h2>Get in Touch</h2>
+    <p>We’re here to help with all your cyber services.</p>
 
-  <form id="contactForm">
-    <input type="text" placeholder="Your Name" required>
-    <input type="text" placeholder="Your Message" required>
-    <button type="submit">Send</button>
-  </form>
+    <div class="info-box">
+      <span>📍</span>
+      <p>Litein Town</p>
+    </div>
+
+    <div class="info-box">
+      <span>📞</span>
+      <p><a href="tel:0707282427">0707 282 427</a></p>
+    </div>
+
+    <div class="info-box">
+      <span>📧</span>
+      <p><a href="mailto:maradonacyber@gmail.com">maradonacyber@gmail.com</a></p>
+    </div>
+
+    <!-- WHATSAPP CTA -->
+    <a href="https://wa.me/254707282427?text=Hello%20Maradona%20Cyber,%20I%20would%20like%20assistance%20with%20your%20services.%20Kindly%20advise%20on%20availability%20and%20pricing.%20Thank%20you." 
+       class="whatsapp-btn" target="_blank">
+       💬 Chat with Us on WhatsApp
+    </a>
+
+  </div>
+
+  <div class="contact-form">
+    <h2>Send a Message</h2>
+
+    <form id="contactForm">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <textarea placeholder="Type your message..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+  </div>
 
 </section>
 
-<footer><p>© 2026 Maradona Cyber</p></footer>
+<footer>
+  <p>© 2026 Maradona Cyber. All rights reserved.</p>
+</footer>
 
-<a href="https://wa.me/254707282427" class="whatsapp-float">💬</a>
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/254707282427?text=Hello%20Maradona%20Cyber,%20I%20need%20assistance%20with%20your%20services." 
+class="whatsapp-float" target="_blank">💬</a>
 
 <script src="script.js"></script>
+
 </body>
 </html>
