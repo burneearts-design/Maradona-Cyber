@@ -43,7 +43,7 @@ nav a::after {
   background: #00b4d8;
   left: 0;
   bottom: -5px;
-  transition: width 0.3s;
+  transition: width 0.3s ease;
 }
 
 nav a:hover::after,
@@ -106,7 +106,7 @@ nav a.active::after {
   text-align: center;
   font-weight: 500;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: transform 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
@@ -154,7 +154,7 @@ nav a.active::after {
   width: 250px;
   text-align: center;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: transform 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .plan:hover {
@@ -257,6 +257,8 @@ nav a.active::after {
   transform: scale(1.1);
   background: #1ebe5d;
 }
+
+/* ===== SERVICES GRID & CARDS ===== */
 .services-grid {
   display: flex;
   flex-wrap: wrap;
@@ -267,7 +269,7 @@ nav a.active::after {
 
 /* ENTIRE CARD CLICKABLE */
 .service-card {
-  display: block; /* IMPORTANT */
+  display: block;
   background: white;
   width: 260px;
   padding: 25px;
@@ -276,7 +278,7 @@ nav a.active::after {
   text-decoration: none;
   color: #1b263b;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
@@ -293,11 +295,11 @@ nav a.active::after {
   color: #555;
 }
 
-/* HOVER EFFECT */
 .service-card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
+
 /* Pulse animation (premium feel) */
 @keyframes pulse {
   0% {
@@ -335,7 +337,8 @@ footer {
     font-size: 28px;
   }
 
-  .features {
+  .features,
+  .services-grid {
     flex-direction: column;
     align-items: center;
   }
