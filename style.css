@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f4f6fb;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: #0d1b2a;
+  color: white;
+}
+
+nav a {
+  color: white;
+  margin: 10px;
+  text-decoration: none;
+}
+
+.hero {
+  height: 80vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+  url('https://images.unsplash.com/photo-1519389950473-47ba0277781c');
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding-top: 150px;
+}
+
+.btn {
+  background: #00b4d8;
+  padding: 12px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.page {
+  padding: 40px;
+  text-align: center;
+}
+
+.pricing {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.plan {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  font-size: 24px;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+}
